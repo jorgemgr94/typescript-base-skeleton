@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-    container_name: typescript-backend-template
+    container_name: typescript-base-skeleton
     build:
       context: ./
       dockerfile: Dockerfile.dev

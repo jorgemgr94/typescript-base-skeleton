@@ -1,7 +1,7 @@
-import { mockPromise } from './util/mock';
+import { mockPromise } from './mock';
 
 describe('Mocks', () => {
-	test('mockPromise', () => {
+	describe('mockPromise', () => {
 		it('should return success', async () => {
 			const promise = await mockPromise<string>('success');
 			expect(promise).toBe('success');
