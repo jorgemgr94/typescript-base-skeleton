@@ -4,10 +4,17 @@ services:
   app:
     container_name: typescript-base-skeleton
     build:
-      context: ./
-      dockerfile: Dockerfile.dev
-    ports:
-      - "4000:3000"
+      dockerfile: Dockerfile
+      context: .
+      target: development
+    command: npm run dev
     volumes:
-      - ./:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+      PORT: 5445
+    env_file:
+      - .env
+    ports:
+      - "4000:5445"
